@@ -1,6 +1,7 @@
 <h1>Consults</h1>
 
 <% @consults.each do |consult| %>
-  <h3> <%= consult.coverage %> </h3>
-  <h3> <%= consult.description %> </h3>
+  <h3> <%= link_to consult.coverage, consult_path(consult) %> </h3>
 <%end%>
+
+<%= link_to 'New consult', new_consult_path %>

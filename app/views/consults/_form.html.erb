@@ -1,0 +1,20 @@
+<%flash.each do |name, msg|%>
+    <%= content_tag(:div,msg, :class => "flash_#{name}")%>
+<%end%>
+<%= form_for @consults do |f| %>
+  <p>
+    <%= f.label :coverage %><br>
+    <%= f.text_field :coverage%>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<%end%>
+
+<%= link_to 'Back to Index', consults_path %>

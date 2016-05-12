@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
+group :development do
+  gem 'rails_layout'
+end
+gem 'bootstrap-sass'
+gem 'rolify', '~> 5.1'
+
 gem 'i18n', '0.6.11'
 
 gem 'rails_admin', '~> 0.8.1'
@@ -66,4 +72,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-

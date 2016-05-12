@@ -1,0 +1,14 @@
+<h1>
+    <%= @consult.coverage %>
+</h1>
+
+<h3>
+  By <%= @consult.medic.email %>
+</h3>
+<p>
+    <strong>Description:</strong>
+    <%= @consult.description %>
+</p>
+<%= link_to 'Edit', edit_consult_path(@consult)%>
+<%= link_to 'Delete', consult_path(@consult), method: :delete %>
+<%= link_to 'Back to Index', consults_path %>
