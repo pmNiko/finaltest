@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512063535) do
+ActiveRecord::Schema.define(version: 20160519061252) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "consults", force: true do |t|
     t.string   "coverage"
@@ -22,6 +28,13 @@ ActiveRecord::Schema.define(version: 20160512063535) do
   end
 
   add_index "consults", ["medic_id"], name: "index_consults_on_medic_id", using: :btree
+
+  create_table "consults_categories", id: false, force: true do |t|
+    t.integer "consult_id"
+    t.integer "category_id"
+  end
+
+  add_index "consults_categories", ["consult_id", "category_id"], name: "index_consults_categories_on_consult_id_and_category_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"

@@ -3,6 +3,7 @@ joeUser = User.new(
   :password              => "12345678",
   :password_confirmation => "12345678"
 )
+joeUser.add_role :admin
 joeUser.save!
 
 janeUser = User.new(
@@ -12,6 +13,11 @@ janeUser = User.new(
 )
 janeUser.save!
 
-Consult.create!(coverage: 'First Post',  description: 'My first post!', medic: joeUser);
-Consult.create!(coverage: 'Second Post', description: 'Another post',   medic: joeUser);
-Consult.create!(coverage: 'Third Post',  description: 'Yet another',    medic: janeUser);
+for i in 1..15
+  Consult.create!({
+    coverage: "Post number #{i}",
+    description: "My #{i} post!",
+    medic: joeUser
+    });
+end
+Consult.create!(coverage: 'Hi everybody!',  description: "his is Jane's fist post", medic: janeUser);

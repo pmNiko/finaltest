@@ -4,4 +4,6 @@ class Consult < ActiveRecord::Base
   validates :medic, presence: true
 
   belongs_to :medic, class_name: 'User'
+  has_and_belongs_to_many :categories
+
 end

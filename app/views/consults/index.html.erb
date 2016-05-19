@@ -4,4 +4,6 @@
   <h3> <%= link_to consult.coverage, consult_path(consult) %> </h3>
 <%end%>
 
-<%= link_to 'New consult', new_consult_path %>
+<% if policy(Consult).new?%>
+  <%= link_to 'New consult', new_consult_path %>
+<%end%>

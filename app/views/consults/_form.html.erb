@@ -1,7 +1,8 @@
 <%flash.each do |name, msg|%>
     <%= content_tag(:div,msg, :class => "flash_#{name}")%>
 <%end%>
-<%= form_for @consults do |f| %>
+
+<%= form_for @consultstas do |f| %>
   <p>
     <%= f.label :coverage %><br>
     <%= f.text_field :coverage%>
